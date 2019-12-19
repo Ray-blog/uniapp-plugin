@@ -1,0 +1,13 @@
+.ray-msg-mask{
+	background: rgba(0,0,0,0.60); 
+	z-index: 9999;
+}
+.ray-msg-content{
+	z-index: 10000;
+}
+.ray-msg-icon{
+	
+	&.ray-msg-error{
+		
+	}
+}
