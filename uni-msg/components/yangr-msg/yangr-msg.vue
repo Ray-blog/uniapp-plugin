@@ -1,13 +1,11 @@
 <template>
-	<view class="ray-msg-container">
-		<view class="ray-msg-mask"></view>
+	<view>
+		<view class="ray-msg-mask" @click="sendMsgToParent"></view>
 		<view class="ray-msg-content">
-			<view class="ray-msg-icon ${opts.type == 'success' ? '' : 'ray-msg-error'}">
-				<text></text>
-			</view>
-			<view>${opts.title ? opts.title : opts.type == 'success' ? '操作成功' : '操作失败'}</view>
-			<view class="${opts.info == '' ? '' : 'fixed-msg-info'}">${opts.info}</view>
-			<view class="ray-msg-btn">${opts.btn}</view>
+			<text :class="['ray-msg-icon', type == 'success' ? '' : 'ray-msg-error']"></text>
+			<view class="ray-msg-title">{{title ? title : type == 'success' ? '操作成功' : '操作失败'}}</view>
+			<view class="fixed-msg-info" v-if="info">{{info}}</view>
+			<view :class="['ray-msg-btn', type == 'success' ? '' : 'ray-msg-error']" @click="sendMsgToParent">{{btn}}</view>
 		</view>
 	</view>
 </template>
@@ -23,7 +21,7 @@
 			},
 			type: {
 				type: String, // success or error
-				value: "success" // 默认值
+				value: "" // 默认值
 			},
 			info: {
 				type: String,
@@ -39,7 +37,9 @@
 
 		},
 		methods: {
-
+			sendMsgToParent(){
+				this.$emit("yangrMsgEvent", '');
+			}
 		}
 	}
 </script>
