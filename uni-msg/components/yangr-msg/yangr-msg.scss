@@ -29,11 +29,11 @@
 	display: inline-block;
 	width: 152rpx;
 	height: 152rpx;
-	mask: url(http://q303mjs2y.bkt.clouddn.com/uniapp/icon-check-block.svg) no-repeat;
+	mask: url(https://static.jiaoyubao.cn/images/common/icon-check-block.svg) no-repeat;
 	mask-size: 100% 100%;
 	background-color: #1a8cff;
 	&.ray-msg-error{
-		mask: url(http://q303mjs2y.bkt.clouddn.com/uniapp/icon-cross-block.svg) no-repeat;
+		mask: url(https://static.jiaoyubao.cn/images/common/icon-cross-block.svg) no-repeat;
 		background-color: #fe1940;
 	}
 }
